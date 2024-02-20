@@ -18,6 +18,10 @@ document.getElementById("myClock").textContent = time;
 
 setTimeout(showTime, 1000);
 
-
 }
+
+window.onload = function() {
+    askName();
+    showTime();
+  };
 
