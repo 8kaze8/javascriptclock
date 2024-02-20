@@ -4,16 +4,17 @@ function askName() {
 }
 
 function showTime() {
-let now = new Date();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let seconds = now.getSeconds();
+    const today = new Date();
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
+    let seconds = today.getSeconds();
+    let day = today.toLocaleDateString('tr-TR', { weekday: 'long' });
 
 hours = hours < 10 ? "0" + hours : hours;
 minutes = minutes < 10 ? "0" + minutes : minutes;
 seconds = seconds < 10 ? "0" + seconds : seconds;
 
-let time = hours + ":" + minutes + ":" + seconds;
+const time = hours + ":" + minutes + ":" + seconds + " " + day;
 document.getElementById("myClock").textContent = time;
 
 setTimeout(showTime, 1000);
